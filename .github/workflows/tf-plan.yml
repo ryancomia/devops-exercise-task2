@@ -1,0 +1,30 @@
+name: "stage infra"
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  terraform:
+    name: "terraform"
+    runs-on: ubuntu-latest      
+    env:
+      AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
+      AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      
+      - name: setup terraform
+        uses: hashicorp/setup-terraform@v1
+
+      - name: initialize
+        id: init
+        run: terraform init
+
+      - name: terraform plan
+        id: plan
+        if: github.event_name == 'push'
+        run: terraform plan -no-color -lock=false
