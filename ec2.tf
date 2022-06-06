@@ -11,7 +11,7 @@ resource "aws_vpc" "devtest" {
 
 # creates an internet gateway
 resource "aws_internet_gateway" "devtest" {
-  vpc_id = aws_vpc.default.id
+  vpc_id = aws_vpc.devtest.id
 
    tags = {
         name = "igw-devopstest"
