@@ -1,21 +1,3 @@
-variable "region" {
-  type        = string
-  description = "aws region"
-  default     = "ap-southeast-1"
-}
-
-variable "bucket" {
-  type        = string
-  description = "bucket name for storing terraform state file"
-  default     = "ryancomia-devopstest"
-}
-
-variable "key" {
-  type        = string
-  description = "key name of the tfstate file."
-  default     = "devopstest.tfstate"
-}
-
 variable "cidr" {
   type        = string
   description = "network range"

@@ -2,13 +2,13 @@ terraform {
   required_version = ">= 0.12.24"
 
   backend "s3" {
-    bucket = var.bucket
-    key = var.key
-    region = var.region    
+    bucket = "ryancomia-devopstest"
+    key = "devopstest.tfstate"
+    region = "ap-southeast-1"
   }
 }
 
 provider "aws" {
-  region = var.region
-}
+  region = "ap-southeast-1"
 
+}

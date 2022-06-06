@@ -12,7 +12,7 @@ Steps:
 6. verify the actions output. (you can also find the resource information by logging into the aws account)
 
 note: 
-- commit to dev branch will trigger a terraform plan - which lints, validates, and shows which resource actions would be applied
-- commit to main will trigger a terraform apply - which spawns the actual resource
+- a commit to 'dev branch' will trigger a terraform plan - which lints, validates, and shows which resource actions would be applied
+- a commit to 'main branch' will trigger a terraform apply - which spawns the actual resource into aws
 - the statefile is stored in a bucket in S3
 - any infrastructure changes to must be done through this pipeline
