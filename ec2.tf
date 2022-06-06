@@ -34,7 +34,7 @@ resource "aws_subnet" "devtest" {
 # creates a network interface
 resource "aws_network_interface" "devtest" {
     subnet_id = aws_subnet.devtest.id
-    private_ip = [var.private_ip]
+    private_ips = [var.private_ip]
 
      tags = {
         name = "nic-devopstest"
