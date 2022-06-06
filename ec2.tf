@@ -84,10 +84,9 @@ resource "aws_instance" "devtest" {
     device_name = "persistent-data"
     volume_size = 8
         tags = {
-
             name = "ebs-devopstest"
         }
-
+     
   }   
      tags = {
         name = "ec2-devopstest"
