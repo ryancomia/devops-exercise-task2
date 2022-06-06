@@ -10,12 +10,6 @@ variable "ec2_subnet_1" {
   default     = "10.10.10.0/24"
 }
 
-variable "az-1" {
-  type        = string
-  description = "availability zone 1"
-  default     = "ap-southeast-1a"
-}
-
 variable "private_ip" {
   type = string
   description = "assigned private ip for instance"

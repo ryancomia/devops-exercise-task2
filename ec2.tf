@@ -33,7 +33,7 @@ resource "aws_subnet" "devtest" {
 
 # creates a network interface
 resource "aws_network_interface" "devtest" {
-    subnet_id = var.aws_subnet.devtest.id
+    subnet_id = aws_subnet.devtest.id
     private_ip = [var.private_ip]
 
      tags = {
