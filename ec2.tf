@@ -85,7 +85,7 @@ resource "aws_eip" "devtest" {
   vpc                       = true
   instance                  = aws_instance.devtest.id
   associate_with_private_ip = var.private_ip
-  depends_on                = [aws_internet_gateway.gw]
+  depends_on                = [aws_internet_gateway.devtest]
 
      tags = {
         name = "elasticip-devopstest"
