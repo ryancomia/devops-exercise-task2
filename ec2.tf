@@ -53,12 +53,18 @@ resource "aws_security_group" "devtest" {
         cidr_blocks  = ["0.0.0.0/0"]    
     }
      ingress {
-        description = "allows ssh from my home ip"
+        description = "allows ssh from my home"
         from_port   = 22
         to_port     = 22
         protocol    = "tcp"
         cidr_blocks  = ["195.133.139.182/32"]    
     }
+      egress {
+        protocol    = -1
+        from_port   = 0 
+        to_port     = 0 
+        cidr_blocks = ["0.0.0.0/0"]
+  }
 
     tags = {
         name = "sg-devopstest"
