@@ -46,10 +46,18 @@ resource "aws_security_group" "devtest" {
     name = "${random_pet.smartcow.id}-sg"
     vpc_id = aws_vpc.devtest.id
     ingress {
+        description = "allows 80 for web access"
         from_port   = 80
         to_port     = 80
         protocol    = "tcp"
         cidr_blocks  = ["0.0.0.0/0"]    
+    }
+     ingress {
+        description = "allows ssh from my home ip"
+        from_port   = 22
+        to_port     = 22
+        protocol    = "tcp"
+        cidr_blocks  = ["195.133.139.182/32"]    
     }
 
     tags = {
