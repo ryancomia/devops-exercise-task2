@@ -19,7 +19,7 @@ variable "private_ip" {
 variable "ami" {
   type        = string
   description = "amazon linux img" 
-  default     = "ami-5189a661" # us-west-2
+  default     = "ami-0bd6906508e74f692" # ap-se-1 linux 2
 }
 
 variable "instance_type" {
