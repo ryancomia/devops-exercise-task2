@@ -45,7 +45,7 @@ resource "aws_network_interface" "devtest" {
 resource "aws_security_group" "devtest" {
     name = "${random_pet.smartcow.id}-sg"
     vpc_id = aws_vpc.devtest.id
-    ingress = {
+    ingress {
         from_port   = 80
         to_port     = 80
         protocol    = "tcp"
@@ -66,7 +66,15 @@ resource "aws_instance" "devtest" {
       network_interface_id = aws_network_interface.devtest.id
       device_index         = 0
     }
-     
+  ebs_block_device {
+    device_name = "persistent-data"
+    volume_size = "8GB"
+        tags {
+
+            name = "ebs-devopstest"
+        }
+
+  }   
      tags = {
         name = "ec2-devopstest"
     } 
