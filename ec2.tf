@@ -20,7 +20,7 @@ resource "aws_internet_gateway" "devtest" {
 
 # creates a subnet
 resource "aws_subnet" "devtest" {
-    vpc_id = aws_vpc.devtest
+    vpc_id = aws_vpc.devtest.id
     cidr_block = var.ec2_subnet_1
     map_public_ip_on_launch = true
 
@@ -44,7 +44,7 @@ resource "aws_network_interface" "devtest" {
 # creates a security group
 resource "aws_security_group" "devtest" {
     name = "${random_pet.smartcow.id}-sg"
-    vpc_id = aws_vpc.devtest
+    vpc_id = aws_vpc.devtest.id
     ingress = {
         from_port   = 80
         to_port     = 80
