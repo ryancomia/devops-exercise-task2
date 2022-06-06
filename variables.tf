@@ -7,13 +7,13 @@ variable "region" {
 variable "bucket" {
   type        = string
   description = "bucket name for storing terraform state file"
-  default     = "change this"
+  default     = "ryancomia-devopstest"
 }
 
 variable "key" {
   type        = string
-  description = "key name of the tfstate file. relax its not aws key ;)"
-  default     = "change this"
+  description = "key name of the tfstate file."
+  default     = "devopstest.tfstate"
 }
 
 variable "cidr" {
