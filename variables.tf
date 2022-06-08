@@ -28,9 +28,15 @@ variable "instance_type" {
   default     = "t2.micro"
 }
 
-# random pass
-variable "length" {
+variable "sshkey" {
   type        = string
-  description = "random password length"
-  default     = "16"  
+  description = "ssh key"
+  default     = "key-for-devtest"  
+}
+
+variable "public_key" {
+  type        = string
+  description = "my public key"
+  default     = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDHMcjcgsnGfNOcQjKRhspsOnZJEUPdi/r90pc/65MJLSJDVFmbmSY25Rx7JkpvBlKVGLGamSv5Jd/LVbEXnicqm6mDgKBWMlwP/eSmyYy98WcXLpjCo5wKjphgUY1p2J7KqU+isq1Kv1FWllLdCohRB/4ZMBbN0lQsQ0joLh3mdndALCg9oIWLE0FDdnp6Sk0pTktL9X+yRy2qAHVmohWxwBWTlhWmEzrqqMqjw2BkI/eH50zeMvAPuG3wUJCksD4sbTidmHmiF7tEJEAFDTzjmqvXy65EepLoz9OBmR+rDv9wdSnvtK5K3cROmro0UqSgHdlbeg/VO2g3aFuUbf9l yeye@apples-MacBook-Pro-3.local
+" 
 }

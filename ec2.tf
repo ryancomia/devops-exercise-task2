@@ -53,16 +53,16 @@ resource "aws_security_group" "devtest" {
         cidr_blocks  = ["0.0.0.0/0"]    
     }
      ingress {
-        description = "allows ssh from my home"
+        description = "allows ssh from my home static ip"
         from_port   = 22
         to_port     = 22
         protocol    = "tcp"
         cidr_blocks  = ["195.133.139.182/32"]    
     }
       egress {
-        protocol    = -1
         from_port   = 0 
         to_port     = 0 
+        protocol    = -1
         cidr_blocks = ["0.0.0.0/0"]
   }
 
@@ -75,6 +75,7 @@ resource "aws_security_group" "devtest" {
 resource "aws_instance" "devtest" {
   ami           = var.ami
   instance_type = var.instance_type
+  key_name = var.sshkey
 
   network_interface {
       network_interface_id = aws_network_interface.devtest.id
@@ -86,7 +87,7 @@ resource "aws_instance" "devtest" {
         tags = {
             name = "ebs-devopstest"
         }
-     
+
   }   
      tags = {
         name = "ec2-devopstest"
@@ -103,4 +104,10 @@ resource "aws_eip" "devtest" {
      tags = {
         name = "elasticip-devopstest"
     } 
+}
+
+resource "aws_key_pair" "devtest" {
+    name = var.sshkey
+    public_key = var.public_key
+  
 }
