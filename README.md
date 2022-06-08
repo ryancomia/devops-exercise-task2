@@ -1,8 +1,10 @@
 # devops-exercise-task2
 
+[DEV]
 [![stage infra](https://github.com/ryancomia/devops-exercise-task2/actions/workflows/tf-plan.yml/badge.svg?branch=dev)](https://github.com/ryancomia/devops-exercise-task2/actions/workflows/tf-plan.yml)
 
 
+[PROD]
 
 
 this repo is used to create the aws infrastructure using terraform and github actions
@@ -20,4 +22,4 @@ note:
 - a commit to 'dev branch' will trigger a terraform plan - which lints, validates, and shows which resource actions would be applied
 - a commit to 'main branch' will trigger a terraform apply - which spawns the actual resource into aws
 - the statefile is stored in a bucket in S3
-- any infrastructure changes to must be done through this pipeline
+- any infrastructure changes must be done through this pipeline
