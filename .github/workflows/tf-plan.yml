@@ -1,4 +1,4 @@
-name: "stage infra"
+name: "plan and validate infra"
 
 on:
   push:
