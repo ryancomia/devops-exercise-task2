@@ -76,6 +76,7 @@ resource "aws_instance" "devtest" {
   ami           = var.ami
   instance_type = var.instance_type
   key_name = var.sshkey
+  user_data = file("userdata.tpl")
 
   network_interface {
       network_interface_id = aws_network_interface.devtest.id
