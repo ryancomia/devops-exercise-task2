@@ -36,6 +36,11 @@ resource "aws_network_interface" "devtest" {
     subnet_id = aws_subnet.devtest.id
     private_ips = [var.private_ip]
 
+    attachment {
+      instance = aws_instance.devtest.id
+      device_index = 1
+    }
+
      tags = {
         name = "nic-devopstest"
     }
@@ -77,7 +82,6 @@ resource "aws_instance" "devtest" {
   instance_type = var.instance_type
   key_name = var.sshkey
   user_data = file("userdata.tpl")
-  private_ip = var.private_ip
 
   network_interface {
       network_interface_id = aws_network_interface.devtest.id
