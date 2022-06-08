@@ -1,5 +1,10 @@
 # devops-exercise-task2
 
+[![stage infra](https://github.com/ryancomia/devops-exercise-task2/actions/workflows/tf-plan.yml/badge.svg?branch=dev)](https://github.com/ryancomia/devops-exercise-task2/actions/workflows/tf-plan.yml)
+
+
+
+
 this repo is used to create the aws infrastructure using terraform and github actions
 
 Steps:
