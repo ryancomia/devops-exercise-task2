@@ -36,11 +36,6 @@ resource "aws_network_interface" "devtest" {
     subnet_id = aws_subnet.devtest.id
     private_ips = [var.private_ip]
 
-    attachment {
-      instance = aws_instance.devtest.id
-      device_index = 1
-    }
-
      tags = {
         name = "nic-devopstest"
     }
