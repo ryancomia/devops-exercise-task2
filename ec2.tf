@@ -107,7 +107,7 @@ resource "aws_eip" "devtest" {
 }
 
 resource "aws_key_pair" "devtest" {
-    name = var.sshkey
+    key_name = var.sshkey
     public_key = var.public_key
   
 }
